@@ -195,12 +195,81 @@ gcc archivo.c -o archivo
 
 ---
 
-# Plantilla Lista
+<CodeSurfer theme={nightOwl} showNumbers={true}>
+
+```c title="Aplicación Básica" file=./codigo/Ejemplo1.c
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer theme={nightOwl} showNumbers={true}>
+
+```c title="Aplicación con imagen" file=./codigo/AplicacionBasica.c
+```
+
+```diff 6:11 title="Aplicación con imagen"
+```
+
+```diff 6:8 title="Aplicación con imagen" subtitle="Agregando contenedor Fixed"
+```
+
+```diff 9:11 title="Aplicación con imagen" subtitle="Agregando imagen desde archivo"
+```
+
+```diff title="Aplicación con imagen"
+```
+
+</CodeSurfer>
+
+---
+
+# Layouts
+
+- Un <span class="concepto">Layout</span> define una estrategia para colocar elementos en pantalla.
+- <span class="nombre">Fixed:</span> Coloca elementos en una coordenada fija.
+- <span class="nombre">Box:</span> Coloca elementos en una fila o una columna.
+- <span class="nombre">Grid:</span> Coloca elementos en una cuadrícula.
+
+---
+
+# Live Coding ⌨️
+
+---
+
+# Concurrencia
 
 <div>
   <ul>
     <Appear>
-      <li></li>
+      <li>Un <span class="nombre">proceso</span> no puede acceder directamente a las variables de otro <span class="nombre">proceso</span>.</li>
+      <li>El <span class="concepto">proceso principal</span> de la interfaz de usuario no puede ser bloqueado.</li>
     </Appear>
   </ul>
 </div>
+
+---
+
+# Hilos
+
+<div>
+  <ul>
+    <Appear>
+      <li>Son <span class="nombre">procesos ligeros</span> que comparten el espacio de memoria, archivos abiertos, etc.</li>
+      <li>Se utiliza la librería <span class="nombre">pthread</span>.</li>
+    </Appear>
+  </ul>
+</div>
+
+---
+
+# Live Coding ⌨️
+
+---
+
+# Gracias
+
+- Código fuente: [github.com/ggzor/expo-gtk](https://www.github.com/ggzor/expo-gtk)
+- Librerías utilizadas: [mdx-deck](https://github.com/jxnblk/mdx-deck) y [code-surfer](https://github.com/pomber/code-surfer)
+
