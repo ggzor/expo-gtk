@@ -1,0 +1,20 @@
+{
+  "name": "expo-sistemas-operativos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^3.2.0",
+    "mdx-deck": "^3.0.13",
+    "raw-loader": "^3.1.0",
+    "style-loader": "^1.0.0"
+  },
+  "scripts": {
+    "start": "mdx-deck Presentacion.mdx"
+  },
+  "dependencies": {
+    "@code-surfer/themes": "^3.0.0-beta.0",
+    "code-surfer": "3.0.0-beta.1",
+    "prism": "^4.1.2"
+  }
+}

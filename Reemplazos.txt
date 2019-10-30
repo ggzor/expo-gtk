@@ -1,0 +1,1 @@
+Concepto #concepto\{(\w+)\} <span class="concepto">$1</span>

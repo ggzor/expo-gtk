@@ -1,0 +1,31 @@
+.tenue { 
+  opacity: 50%; 
+}
+
+.numero {
+  color: #CE4164;
+  font-weight: bold;
+}
+
+.concepto {
+  color: #A6C840;
+  font-weight: bold;
+}
+
+.nombre {
+  color: #009FFD;
+  font-weight: bold;
+}
+
+.dato {
+  color: #FFE0B5;
+}
+
+.resaltar {
+  font-weight: bold;
+}
+
+/* Fixes */
+span.token-macro, span.token-directive {
+  color: rgb(199,146,234);
+}

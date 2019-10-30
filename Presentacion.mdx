@@ -1,0 +1,206 @@
+import { Appear, Notes } from 'mdx-deck'
+import { future as myTheme } from 'mdx-deck/themes'
+import { CodeSurfer } from "code-surfer"
+import { nightOwl } from "@code-surfer/themes"
+
+import "prismjs/components/prism-clike.js"
+import "prismjs/components/prism-c.js"
+
+import './style.css'
+
+export const theme = myTheme
+
+# Tutorial GTK 
+---
+
+# ¿Qué es **GTK**?
+
+<div>
+  <ul>
+    <Appear>
+      <li>
+        Un toolkit <span class="tenue">(kit de utilerías)</span> para crear
+        interfaces de usuario orientado a objetos escrito en <span class="nombre">C</span>.
+       </li>
+      <li>También conocido como <strong>GIMP Toolkit</strong>.</li>
+      <li>Proporciona <span class="numero">186</span> componentes de control gráfico (<span class="concepto">Widgets</span>).</li>
+      <li>El release inicial fue el <span class="dato">14 de Abril de 1998</span>.</li>
+      <li>Adoptado por <strong>GNOME</strong> para desarrollar su entorno gráfico.</li>
+      <li>Licenciado bajo los términos <span class="dato">GNU LGPL</span>.</li>
+    </Appear>
+    </ul>
+</div>
+
+<Notes>
+  Raro que sea orientado a objetos.
+
+  Utiliza la librería GObject que proporciona un framework orientado a objetos en C
+
+  Soporta señales, herencia simple y manejo de memoria
+
+  Creada hace 21 Años, para los que tienen esa edad son tan viejos como GTK
+
+  Licencia que permite el desarrollo de software libre como privado
+
+  Tiene interfaces con lenguajes como Python, C++, C#
+</Notes>
+
+---
+# Conceptos 
+
+<div>
+  <ul>
+    <Appear>
+      <li>Todas las aplicaciones de <span class="nombre">GTK</span> consisten de una jerarquía de <span class="concepto">Widgets</span>.</li>
+      <li>El widget principal de cada aplicación es <span class="concepto">Window</span>.</li>
+      <li><span class="nombre">GTK</span> es guiado por <span class="concepto">Eventos</span>. Cuando ocurre un evento se notifica a un <span class="concepto">Escuchador</span> <span class="tenue">(función)</span>.</li>
+      <li>Las <span class="concepto">Señales</span> conectan un evento específico de la aplicación con múltiples escuchadores <span class="tenue">(funciones)</span>.</li>
+    </Appear>
+  </ul>
+</div>
+
+<Notes>
+  Las señales se definen en GObject
+
+</Notes>
+
+---
+
+# Convenciones 
+
+Todas los nombres de funciones tienen la forma siguiente:
+
+<div><span style="color: #009FFD">gtk_</span><span style="color: #A6C840">window_</span><span style="color: #FFA400">set_title</span>(<span style="color: #CE4164">instancia</span>, <span style="color: #FFE0B5">...parametros</span>)</div>
+<br/>
+<div>
+  <ul>
+    <Appear>
+      <li><span style="color: #009FFD">Librería:</span> gtk | gdk | g <span class="tenue">(espacio de nombres)</span></li>
+      <li><span style="color: #A6C840">Clase:</span> window | object | button | ...</li>
+      <li><span style="color: #FFA400">Método </span><span class="tenue"> (getters, setters, etc.)</span></li>
+      <li><span style="color: #CE4164">Instancia</span></li>
+    </Appear>
+  </ul>
+</div>
+
+
+
+<Notes>
+  El parámetro instancia es como el self de Python
+</Notes>
+
+---
+
+<CodeSurfer theme={nightOwl} showNumbers={true}>
+
+```c title="Aplicación Básica" file=./codigo/Ejemplo1.c
+```
+
+```diff 1 title="Aplicación Básica" subtitle="Importar la librería gtk"
+
+```
+
+```diff 1,11:12 title="Aplicación Básica" subtitle="Inicializar la aplicación"
+
+```
+
+```diff 12[25:90] title="Aplicación Básica" subtitle="Inicializar la aplicación"
+
+```
+
+```diff 1,11:14 title="Aplicación Básica" subtitle="Conectar la señal"
+
+```
+
+```diff 1,11:15 title="Aplicación Básica" subtitle="Ejecutar la aplicación"
+
+```
+
+```diff 1,11:16 title="Aplicación Básica" subtitle="Liberar los recursos utilizados"
+
+```
+
+```diff 1,11:19 title="Aplicación Básica" subtitle="Retornar el estado de la aplicación"
+
+```
+
+```diff 3:9 title="Aplicación Básica" subtitle="Creación de los Widgets"
+
+```
+
+```diff 3 title="Aplicación Básica" subtitle="Creación de los Widgets"
+
+```
+
+```diff 3[22:61],14[20:22,59:62] title="Aplicación Básica" subtitle="Creación de los Widgets"
+
+```
+
+```diff 3:4 title="Aplicación Básica" subtitle="Creación del widget Window"
+
+```
+
+```diff 3:7 title="Aplicación Básica" subtitle="Establecer parámetros de la ventana"
+
+```
+
+```diff 3:9 title="Aplicación Básica" subtitle="Mostrar la ventana"
+
+```
+
+```diff title="Aplicación Básica"
+
+```
+
+</CodeSurfer>
+
+<Notes>
+  Se bloquea al ejecutar la aplicación
+
+  NULL en g_signal_connect son argumentos adicionales para la cerradura
+
+  Preguntar por dudas
+</Notes>
+
+---
+
+# Compilación 💻
+
+---
+
+<CodeSurfer theme={nightOwl}>
+
+```bash title="Instalación"
+# Debian / Ubuntu
+sudo apt-get install libgtk-3-dev
+
+# Fedora
+sudo yum install gtk3-devel
+
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer theme={nightOwl}>
+
+```bash title="Compilación"
+gcc archivo.c -o archivo
+    `pkg-config --cflags gtk+-3.0` 
+    `pkg-config --libs gtk+-3.0`
+```
+
+</CodeSurfer>
+
+---
+
+# Plantilla Lista
+
+<div>
+  <ul>
+    <Appear>
+      <li></li>
+    </Appear>
+  </ul>
+</div>
